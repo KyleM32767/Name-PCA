@@ -16,20 +16,30 @@ def encodeList(title):
 	file_raw = open('names_raw/' + title + '.txt', 'r').read().split('\n')
 	file_encoded = open('names_encoded/' + title + '.txt', 'w')
 
+	# determine the length of the longest name
+	maxLen = 0
+	for n in file_raw:
+		if len(n) > maxLen:
+			maxLen = len(n)
+
 	for name_raw in file_raw:
 		name_encoded = ''
+
+		# pad out the raw name with spaces to normalize length
+		name_raw += ' ' * (maxLen - len(name_raw))
 		
 		for letter in name_raw:
 			letterIndex = ALPHABET.find(letter)
-			name_encoded += '0' * letterIndex
-			name_encoded += '1'
+			if letterIndex != -1:
+				name_encoded += '0' * letterIndex
+				name_encoded += '1'
 			name_encoded += '0' * (25 - letterIndex)
 
 		file_encoded.write(name_encoded + '\n')
 
 	file_encoded.close()
 
-
+# encodeList('test')
 encodeList('male')
 encodeList('female')
 # encodeList('last')
