@@ -4,13 +4,13 @@
 	Author: Kyle Mitard
 	Created 15 March 2020
 	
-	Gets eigenvectors for the three sets of names
+	Gets eigenvectors for the three sets of names, encoded with one-hot vectors
 #}
 
 % load encoded names
-names_male = load('names_encoded/male.txt');
-names_female = load('names_encoded/female.txt');
-% names_last = load('names_encoded/last.txt');
+names_male = dlmread('names_encoded/male.txt');
+names_female = dlmread('names_encoded/female.txt');
+% names_last = csvread('names_encoded/last.txt');
 
 % get m (number of samples) and n (number of features)
 [m_male, n_male] = size(names_male);
