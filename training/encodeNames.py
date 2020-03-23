@@ -3,6 +3,7 @@
 
 	Author: Kyle Mitard
 	Created 15 March 2020
+	Updated 23 March 2020
 
 	Takes three lists of names and encodes them into one-hot vectors so they can be used for machine learning stuffs
 '''

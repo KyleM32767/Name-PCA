@@ -3,6 +3,7 @@
 	
 	Author: Kyle Mitard
 	Created 15 March 2020
+	Updated 23 March 2020
 	
 	Gets eigenvectors for the three sets of names, encoded with one-hot vectors
 #}
