@@ -44,8 +44,26 @@ public class NameGenerator
 		eigenvectors.loadCSV(eigenvectorFile);
 	}
 	
+	/**
+	 * Generates a name from an array of features
+	 * 
+	 * @param features an array of doubles between 0 and 1
+	 */
+	public void getName(double[] features)
+	{
+		//convert array into a SimpleMatrix with one column
+		SimpleMatrix z = new SimpleMatrix(1, features.length, false, features);
+		
+		
+		SimpleMatrix x = z.mult(eigenvectors.transpose());
+		
+		x.print();
+	}
+	
+	
 	public static void main(String[] args) throws IOException
 	{
 		NameGenerator n = new NameGenerator("training\\eigenvectors\\female.csv", 270);
+		
 	}
 }
