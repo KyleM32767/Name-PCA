@@ -41,9 +41,9 @@ def encodeList(title):
 		
 		for letter in name_raw:
 			letterIndex = ALPHABET.find(letter)
-			name_encoded += '0 ' * letterIndex
+			name_encoded += '-1 ' * letterIndex
 			name_encoded += '1 '
-			name_encoded += '0 ' * (26 - letterIndex)
+			name_encoded += '-1 ' * (26 - letterIndex)
 
 		file_encoded.write(name_encoded + '\n')
 

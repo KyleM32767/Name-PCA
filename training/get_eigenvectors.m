@@ -29,6 +29,6 @@ sigma_female = (1 / m_female) * names_female' * names_female;
 % [U_last, S_last, D_last] = svd(sigma_last);
 
 % save eigenvectors in a csv file
-save 'eigenvectors/male.csv' U_male -ascii;
-save 'eigenvectors/female.csv' U_female -ascii;
+save 'eigenvectors/male.txt' U_male -ascii;
+save 'eigenvectors/female.txt' U_female -ascii;
 % save 'eigenvectors/last.txt' U_last -ascii;
